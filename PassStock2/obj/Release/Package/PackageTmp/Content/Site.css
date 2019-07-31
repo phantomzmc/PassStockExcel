@@ -1,0 +1,61 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color :azure;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.upload{
+    glyph-orientation-vertical : auto;
+    justify-content : space-around;
+    align-content : center;
+    align-items : center;
+    vertical-align : central;
+    text-align : center;
+}
+.file-upload {
+    margin-top : 50px;
+    display: flex;
+    flex-direction : column;
+    margin-left: 50px;
+    align-content: center;
+    align-items: center;
+    vertical-align: central;
+    text-align: center;
+}
+.date-stock, .count-round {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-content: center;
+    align-items: center;
+    vertical-align: central;
+    text-align: center;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+        background-color : #ffffff;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}

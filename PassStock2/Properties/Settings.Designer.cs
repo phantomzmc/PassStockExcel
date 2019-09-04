@@ -25,7 +25,7 @@ namespace PassStock2.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.195")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.186")]
         public string HOST {
             get {
                 return ((string)(this["HOST"]));
@@ -43,7 +43,7 @@ namespace PassStock2.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("porder")]
         public string USERNAME {
             get {
                 return ((string)(this["USERNAME"]));
@@ -52,7 +52,7 @@ namespace PassStock2.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1234")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5050")]
         public string PASSWORD {
             get {
                 return ((string)(this["PASSWORD"]));

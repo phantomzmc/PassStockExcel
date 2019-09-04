@@ -50,14 +50,3 @@ C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Release\PassStock2.csp
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Release\PassStock2.csproj.CopyComplete
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Release\PassStock2.dll
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Release\PassStock2.pdb
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.AspNet.SignalR.Core.dll
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.Owin.dll
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.Owin.Security.dll
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Owin.dll
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.AspNet.SignalR.Core.pdb
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.AspNet.SignalR.Core.xml
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.Owin.xml
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.Owin.Security.xml

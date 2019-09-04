@@ -19,14 +19,17 @@ select,
 textarea {
     max-width: 280px;
 }
-.upload{
-    width : 100%;
-    glyph-orientation-vertical : auto;
-    justify-content : space-around;
-    align-content : center;
-    align-items : center;
-    vertical-align : central;
-    text-align : center;
+.lead{
+    margin : 30px;
+}
+.upload {
+    width: 100%;
+    glyph-orientation-vertical: auto;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    vertical-align: central;
+    text-align: center;
 }
 .file-upload {
     margin-top : 50px;
@@ -47,8 +50,9 @@ textarea {
     vertical-align: central;
     text-align: center;
 }
-
-
+.txt_GridView{
+    font-size : smaller;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {

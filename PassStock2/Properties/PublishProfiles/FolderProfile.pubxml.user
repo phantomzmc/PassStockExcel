@@ -27,11 +27,29 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
       <publishTime>07/30/2013 16:57:30</publishTime>
     </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
+      <publishTime>04/03/2019 00:30:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.pdb">
+      <publishTime>04/03/2019 07:19:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
+      <publishTime>04/03/2019 00:30:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.pdb">
+      <publishTime>04/03/2019 07:20:50</publishTime>
+    </File>
     <File Include="bin/Microsoft.AspNet.Web.Optimization.WebForms.dll">
       <publishTime>02/11/0928 15:26:04</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/0932 16:10:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>01/13/2014 16:11:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>01/13/2014 16:11:08</publishTime>
     </File>
     <File Include="bin/Microsoft.ScriptManager.MSAjax.dll">
       <publishTime>09/06/0927 11:20:12</publishTime>
@@ -48,11 +66,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/NoomLibrary.dll">
       <publishTime>02/24/2017 14:11:02</publishTime>
     </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/13/2012 12:19:34</publishTime>
+    </File>
     <File Include="bin/PassStock2.dll">
-      <publishTime>07/31/2019 11:55:11</publishTime>
+      <publishTime>08/21/2019 15:01:03</publishTime>
     </File>
     <File Include="bin/PassStock2.pdb">
-      <publishTime>07/31/2019 11:55:11</publishTime>
+      <publishTime>08/21/2019 15:01:03</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/27/2016 21:50:24</publishTime>
@@ -181,10 +202,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/27/2019 11:03:34</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>07/30/2019 10:55:33</publishTime>
+      <publishTime>08/20/2019 10:36:07</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>07/31/2019 11:54:34</publishTime>
+      <publishTime>08/21/2019 14:50:29</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>07/25/2019 09:06:29</publishTime>
@@ -257,6 +278,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/jquery-3.4.1.slim.min.map">
       <publishTime>07/30/2019 16:56:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.4.1.js">
+      <publishTime>07/31/2019 14:23:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.4.1.min.js">
+      <publishTime>07/31/2019 14:23:07</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>07/25/2019 09:06:39</publishTime>
@@ -376,7 +403,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/25/2019 09:06:41</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>07/30/2019 15:51:35</publishTime>
+      <publishTime>08/01/0933 15:47:48</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
       <publishTime>07/25/2019 09:06:42</publishTime>
@@ -385,7 +412,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/25/2019 09:06:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/31/2019 10:18:21</publishTime>
+      <publishTime>08/02/0933 13:39:08</publishTime>
     </File>
   </ItemGroup>
 </Project>

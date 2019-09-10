@@ -1,6 +1,7 @@
 ﻿using NoomLibrary;
 using PassStockExcel;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,30 +10,95 @@ using System.Web;
 
 namespace PassStock2
 {
-    public class TreePetch
+    public class TreePetchList : IList<TreePetchList.TreePetch>
     {
-        public int T_Count_Item { get; set; }
-        public Double T_Total_Coast { get; set; }
-        public Double T_Sum_AmoundSold { get; set; }
-        public Double T_Coast_Dis_EA { get; set; }
-        public Double T_Coast_Dis_List { get; set; }
-        public Double T_Coast_Dis_Bath { get; set; }
-        public Double T_Coast_Plus_EA { get; set; }
-        public Double T_Coast_Plus_List { get; set; }
-        public Double T_Coast_Plus_Bath { get; set; }
+        private CStatement _statememet_Count, _statememet_Total_Coast, _statememet_Sum_Amound, _statememet_Dis_Bath, _statememet_Dis_EA, _statememet_Dis_List, _statememet_Plus_Bath, _statememet_Plus_EA, _statememet_Plus_List;
+        private Dictionary<int, TreePetch> _list = new Dictionary<int, TreePetch>();
 
-        public TreePetch()
+
+        SqlDataAdapter adapter = new SqlDataAdapter();
+
+        #region Imprement
+        public TreePetch this[int index]
         {
-            this.T_Count_Item = 0;
-            this.T_Total_Coast = 0;
-            this.T_Sum_AmoundSold = 0;
-            this.T_Coast_Dis_EA = 0.0;
-            this.T_Coast_Dis_List = 0;
-            this.T_Coast_Dis_Bath = 0.0;
-            this.T_Coast_Plus_EA = 0.0;
-            this.T_Coast_Plus_List = 0;
-            this.T_Coast_Plus_Bath = 0.0;
+            get
+            {
+                TreePetch result;
+                if (this._list.TryGetValue(index, out result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                TreePetch result;
+                if (this._list.TryGetValue(index, out result))
+                {
+                    this._list[index] = value;
+                }
+                else
+                {
+                    this._list.Add(index, value);
+                }
+            }
+        }
+        public int Count => this.Count;
 
+        public bool IsReadOnly => this.IsReadOnly;
+
+        public void Add(TreePetch item)
+        {
+            this.Add(item);
+        }
+
+        public void Clear()
+        {
+            this.Clear();
+        }
+
+        public bool Contains(TreePetch item)
+        {
+            return this.Contains(item);
+        }
+
+        public void CopyTo(TreePetch[] array, int arrayIndex)
+        {
+            this.CopyTo(array, arrayIndex);
+        }
+
+        public IEnumerator<TreePetch> GetEnumerator() => this.GetEnumerator();
+
+        public int IndexOf(TreePetch item)
+        {
+            return this.IndexOf(item);
+        }
+
+        public void Insert(int index, TreePetch item)
+        {
+            this.Insert(index, item);
+        }
+
+        public bool Remove(TreePetch item)
+        {
+            return this.Remove(item);
+        }
+
+        public void RemoveAt(int index)
+        {
+            this.RemoveAt(index);
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        public TreePetchList()
+        {
             this._statememet_Count = new CStatement("uspSelectCount_Item", "uspImportExcelStock", "UPDATE", "DELECT", System.Data.CommandType.StoredProcedure);
             this._statememet_Total_Coast = new CStatement("uspSelectTotal_Coast", "uspImportExcelStock", "UPDATE", "DELECT", System.Data.CommandType.StoredProcedure);
             this._statememet_Sum_Amound = new CStatement("uspSelectSum_AmoundSold", "uspImportExcelStock", "UPDATE", "DELECT", System.Data.CommandType.StoredProcedure);
@@ -43,16 +109,10 @@ namespace PassStock2
             this._statememet_Plus_Bath = new CStatement("uspSelectDif_Coast_Plus_Bath", "uspImportExcelStock", "UPDATE", "DELECT", System.Data.CommandType.StoredProcedure);
             this._statememet_Plus_EA = new CStatement("uspSelectDif_Coast_Plus_EA", "uspImportExcelStock", "UPDATE", "DELECT", System.Data.CommandType.StoredProcedure);
             this._statememet_Plus_List = new CStatement("uspSelectDif_Coast_Plus_List", "uspImportExcelStock", "UPDATE", "DELECT", System.Data.CommandType.StoredProcedure);
-
         }
-
-        private CStatement _statememet_Count, _statememet_Total_Coast, _statememet_Sum_Amound,_statememet_Dis_Bath, _statememet_Dis_EA, _statememet_Dis_List, _statememet_Plus_Bath, _statememet_Plus_EA, _statememet_Plus_List;
-
-        SqlDataAdapter adapter = new SqlDataAdapter();
-
-        public void getCount_Item(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public int getCount_Item(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
-            int countitem;
+            int countitem = 0;
             DataTable _dt = new DataTable();
             TreePetch treePetch = new TreePetch();
 
@@ -78,6 +138,7 @@ namespace PassStock2
                 foreach (DataRow item in _dt.Rows)
                 {
                     treePetch.T_Count_Item = Convert.ToInt32(item["Count_Item"]);
+                    countitem = Convert.ToInt32(item["Count_Item"]);
                 }
 
                 cstate.Commit();
@@ -92,10 +153,12 @@ namespace PassStock2
             {
                 cstate.Close();
             }
+            return countitem;
         }
 
-        public void getTotal_Count(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public int getTotal_Count(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
+            int total_count = 0;
             DataTable _dt = new DataTable();
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
@@ -120,6 +183,7 @@ namespace PassStock2
                 {
                     TreePetch treePetch = new TreePetch();
                     treePetch.T_Total_Coast = Convert.ToInt32(item["Total_Coast"]);
+                    total_count = Convert.ToInt32(item["Total_Coast"]);
                 }
                 cstate.Commit();
 
@@ -133,11 +197,12 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return;
+            return total_count;
         }
 
-        public void getSum_Amound(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public int getSum_Amound(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
+            int sum_amound = 0;
             DataTable _dt = new DataTable();
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
@@ -162,6 +227,7 @@ namespace PassStock2
                 {
                     TreePetch treePetch = new TreePetch();
                     treePetch.T_Sum_AmoundSold = Convert.ToInt32(item["Total"]);
+                    sum_amound = Convert.ToInt32(item["Total"]);
                 }
                 cstate.Commit();
 
@@ -175,11 +241,12 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return;
+            return sum_amound;
         }
 
-        public void getDifCoast_Dis_Bath(DateTime date_count_stock, int id_brach, int count,string type_item)
+        public int getDifCoast_Dis_Bath(DateTime date_count_stock, int id_brach, int count,string type_item)
         {
+            int T_Coast_Dis_Bath = 0;
             DataTable _dt = new DataTable();
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
@@ -203,7 +270,8 @@ namespace PassStock2
                 foreach (DataRow item in _dt.Rows)
                 {
                     TreePetch treePetch = new TreePetch();
-                    treePetch.T_Coast_Dis_Bath = Convert.ToDouble(item["DIF_Total_Coast"]);
+                    T_Coast_Dis_Bath = Convert.ToInt32(item["DIF_Total_Coast"]);
+                    treePetch.T_Coast_Dis_Bath = T_Coast_Dis_Bath;
                 }
                 cstate.Commit();
 
@@ -217,13 +285,13 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return ;
+            return T_Coast_Dis_Bath;
         }
 
-        public void getDifCoast_Dis_EA(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public int getDifCoast_Dis_EA(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
             DataTable _dt = new DataTable();
-
+            int T_Coast_Dis_EA = 0;
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
             try
@@ -247,6 +315,7 @@ namespace PassStock2
                 {
                     TreePetch treePetch = new TreePetch();
                     treePetch.T_Coast_Dis_EA = Convert.ToDouble(item["DIF_Total_Coast"]);
+                    T_Coast_Dis_EA = Convert.ToInt32(item["DIF_Total_Coast"]);
                 }
                 cstate.Commit();
 
@@ -260,12 +329,13 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return;
+            return T_Coast_Dis_EA;
         }
 
-        public void getDifCoast_Dis_List(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public int getDifCoast_Dis_List(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
             DataTable _dt = new DataTable();
+            int Count_List = 0;
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
             try
@@ -289,6 +359,7 @@ namespace PassStock2
                 {
                     TreePetch treePetch = new TreePetch();
                     treePetch.T_Coast_Dis_List = Convert.ToDouble(item["Count_List"]);
+                    Count_List = Convert.ToInt32(item["Count_List"]);
                 }
                 cstate.Commit();
 
@@ -302,11 +373,12 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return;
+            return Count_List;
         }
 
-        public void getDifCoast_Plus_Bath(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public double getDifCoast_Plus_Bath(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
+            double DIF_Total_Coast = 0;
             DataTable _dt = new DataTable();
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
@@ -330,7 +402,8 @@ namespace PassStock2
                 foreach (DataRow item in _dt.Rows)
                 {
                     TreePetch treePetch = new TreePetch();
-                    treePetch.T_Coast_Plus_Bath = Convert.ToDouble(item["DIF_Total_Coast"]);
+                    treePetch.T_Coast_Plus_Bath = Convert.ToInt64(item["DIF_Total_Coast"]);
+                    DIF_Total_Coast = Convert.ToDouble(item["DIF_Total_Coast"]);
                 }
                 cstate.Commit();
 
@@ -344,13 +417,13 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return;
+            return DIF_Total_Coast;
         }
 
-        public void getDifCoast_Plus_EA(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public double getDifCoast_Plus_EA(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
             DataTable _dt = new DataTable();
-
+            double DIF_Total_Coast = 0;
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
             try
@@ -373,7 +446,8 @@ namespace PassStock2
                 foreach (DataRow item in _dt.Rows)
                 {
                     TreePetch treePetch = new TreePetch();
-                    treePetch.T_Coast_Plus_EA = Convert.ToDouble(item["DIF_Total_Coast"]);
+                    treePetch.T_Coast_Plus_EA = Convert.ToInt64(item["DIF_Total_Coast"]);
+                    DIF_Total_Coast = Convert.ToDouble(item["DIF_Total_Coast"]);
                 }
                 cstate.Commit();
 
@@ -387,12 +461,13 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return;
+            return DIF_Total_Coast;
         }
 
-        public void getDifCoast_Plus_List(DateTime date_count_stock, int id_brach, int count, string type_item)
+        public double getDifCoast_Plus_List(DateTime date_count_stock, int id_brach, int count, string type_item)
         {
             DataTable _dt = new DataTable();
+            double Count_List = 0;
             String count_stock = date_count_stock.ToString("yyyy-MM-dd");
             CStatementList cstate = new CStatementList(Connection.CSQLConnection);
             try
@@ -405,7 +480,7 @@ namespace PassStock2
 
 
                 CSQLDataAdepterList adlist = new CSQLDataAdepterList();
-                CSQLStatementValue csv = new CSQLStatementValue(this._statememet_Dis_List, plist, NoomLibrary.StatementType.Select);
+                CSQLStatementValue csv = new CSQLStatementValue(this._statememet_Plus_List, plist, NoomLibrary.StatementType.Select);
                 adlist.Add(csv);
                 cstate.Open();
                 cstate.Execute(adlist);
@@ -415,7 +490,8 @@ namespace PassStock2
                 foreach (DataRow item in _dt.Rows)
                 {
                     TreePetch treePetch = new TreePetch();
-                    treePetch.T_Coast_Plus_List = Convert.ToDouble(item["Count_List"]);
+                    treePetch.T_Coast_Plus_List = Convert.ToInt32(item["Coast_List"]);
+                    Count_List = Convert.ToDouble(item["Coast_List"]);
                 }
                 cstate.Commit();
 
@@ -429,7 +505,34 @@ namespace PassStock2
             {
                 cstate.Close();
             }
-            return;
+            return Count_List;
         }
+
+        public class TreePetch
+        {
+            public int T_Count_Item { get; set; }
+            public Double T_Total_Coast { get; set; }
+            public Double T_Sum_AmoundSold { get; set; }
+            public Double T_Coast_Dis_EA { get; set; }
+            public Double T_Coast_Dis_List { get; set; }
+            public Double T_Coast_Dis_Bath { get; set; }
+            public Double T_Coast_Plus_EA { get; set; }
+            public Double T_Coast_Plus_List { get; set; }
+            public Double T_Coast_Plus_Bath { get; set; }
+
+            public TreePetch()
+            {
+                this.T_Count_Item = 0;
+                this.T_Total_Coast = 0;
+                this.T_Sum_AmoundSold = 0;
+                this.T_Coast_Dis_EA = 0.0;
+                this.T_Coast_Dis_List = 0;
+                this.T_Coast_Dis_Bath = 0.0;
+                this.T_Coast_Plus_EA = 0.0;
+                this.T_Coast_Plus_List = 0;
+                this.T_Coast_Plus_Bath = 0.0;
+            }
+        }
+
     }
 }

@@ -20,8 +20,29 @@ namespace PassStock2
         public int ID_Brach;
         public int round;
 
-        TreePetch treePetch = new TreePetch();
-        Dealer dealer = new Dealer();
+        TreePetchList treePetchList = new TreePetchList();
+        DealerList dealerList = new DealerList();
+
+        double te_difCoast_Dis_Bath;
+        double te_difCoast_Dis_EA;
+        double te_difCoast_Dis_List;
+        double te_difCoast_Plus_Bath;
+        double te_difCoast_Plus_EA;
+        double te_difCoast_Plus_List;
+        double te_sum_amound;
+        double te_total_count;
+        double te_count_item;
+
+        double de_difCoast_Dis_Bath;
+        double de_difCoast_Dis_EA;
+        double de_difCoast_Dis_List;
+        double de_difCoast_Plus_Bath;
+        double de_difCoast_Plus_EA;
+        double de_difCoast_Plus_List;
+        double de_sum_amound;
+        double de_total_count;
+        double de_count_item;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             SpacePartsList spacePartList = new SpacePartsList();
@@ -186,8 +207,6 @@ namespace PassStock2
             Panel1.Visible = true;
             Panel2.Visible = false;
 
-            TreePetch treePetch = new TreePetch();
-            treePetch.getDifCoast_Dis_Bath(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
         }
         public void select_count1_click(object sender, EventArgs e)
         {
@@ -225,23 +244,111 @@ namespace PassStock2
         }
         public void selectReport_Button_Click(object sender , EventArgs e)
         {
-            treePetch.getDifCoast_Dis_Bath(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getDifCoast_Dis_EA(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getDifCoast_Dis_List(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getDifCoast_Plus_Bath(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getDifCoast_Plus_EA(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getDifCoast_Plus_List(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getSum_Amound(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getTotal_Count(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
-            treePetch.getCount_Item(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_difCoast_Dis_Bath = treePetchList.getDifCoast_Dis_Bath(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_difCoast_Dis_EA = treePetchList.getDifCoast_Dis_EA(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_difCoast_Dis_List = treePetchList.getDifCoast_Dis_List(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_difCoast_Plus_Bath = treePetchList.getDifCoast_Plus_Bath(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_difCoast_Plus_EA = treePetchList.getDifCoast_Plus_EA(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_difCoast_Plus_List = treePetchList.getDifCoast_Plus_List(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_sum_amound = treePetchList.getSum_Amound(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_total_count = treePetchList.getTotal_Count(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+            te_count_item = treePetchList.getCount_Item(Convert.ToDateTime("2019-08-22"), 3, 1, "T");
+
+            de_difCoast_Dis_Bath = dealerList.getDifCoast_Dis_Bath(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_difCoast_Dis_EA = dealerList.getDifCoast_Dis_EA(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_difCoast_Dis_List = dealerList.getDifCoast_Dis_List(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_difCoast_Plus_Bath = dealerList.getDifCoast_Plus_Bath(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_difCoast_Plus_EA = dealerList.getDifCoast_Plus_EA(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_difCoast_Plus_List = dealerList.getDifCoast_Plus_List(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_sum_amound = dealerList.getSum_Amound(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_total_count = dealerList.getTotal_Count(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
+            de_count_item = dealerList.getCount_Item(Convert.ToDateTime("2019-08-22"), 3, 1, "D");
 
             Panel_Report_View.Visible = true;
-            this.setTextReport();
+            this.setTextReport_T();
+            this.setTextReport_D();
         }
-        public void setTextReport()
+        public void setTextReport_T()
+        {
+            
+            t_difCoast_Plus_List.Text = string.Format("{0:#,###.##}", decimal.Parse(te_difCoast_Plus_List.ToString()));
+            t_difCoast_Plus_EA.Text = string.Format("{0:#,###.##}", decimal.Parse(te_difCoast_Plus_EA.ToString()));
+            t_difCoast_Plus_Bath.Text = string.Format("{0:#,###.##}", decimal.Parse(te_difCoast_Plus_Bath.ToString()));
+
+
+            t_difCoast_Dis_List.Text = string.Format("{0:#,###.##}", decimal.Parse(te_difCoast_Dis_List.ToString()));
+            t_difCoast_Dis_EA.Text = string.Format("{0:#,###.##}", decimal.Parse(te_difCoast_Dis_EA.ToString()));
+            t_difCoast_Dis_Bath.Text = string.Format("{0:#,###.##}", decimal.Parse(te_difCoast_Dis_Bath.ToString()));
+
+            t_count_item.Text = string.Format("{0:#,###.##}", decimal.Parse(te_count_item.ToString()));
+            t_total_count.Text = string.Format("{0:#,###.##}", decimal.Parse(te_sum_amound.ToString()));
+            t_sum_amound.Text = string.Format("{0:#,###.##}", decimal.Parse(te_total_count.ToString()));
+
+            t_total_bal_bath.Text = string.Format("{0:#,###.##}", decimal.Parse((te_difCoast_Plus_Bath - te_difCoast_Dis_Bath).ToString()));
+            t_total_dif_bath.Text = string.Format("{0:#,###.##}", decimal.Parse((te_difCoast_Plus_Bath + te_difCoast_Dis_Bath).ToString()));
+
+            this.setTextReportPercent_T();
+        }
+        public void setTextReportPercent_T()
+        {
+            double per_difCoast_Plus_List = (te_difCoast_Plus_List / te_count_item) * 100;
+            double per_difCoast_Plus_EA = (te_difCoast_Plus_EA / te_sum_amound) * 100;
+            double per_difCoast_Plus_Bath = (te_difCoast_Plus_Bath / te_total_count) *100;
+            double per_difCoast_Dis_List = (te_difCoast_Dis_List / te_count_item) * 100;
+            double per_difCoast_Dis_EA = (te_difCoast_Dis_EA / te_sum_amound) * 100;
+            double per_difCoast_Dis_Bath = (te_difCoast_Dis_Bath / te_total_count) * 100;
+
+            t_difCoast_Plus_List_Percent.Text = string.Format("{0:##.##}", decimal.Parse(per_difCoast_Plus_List.ToString()));
+            t_difCoast_Plus_EA_Percent.Text = string.Format("{0:##.##}", decimal.Parse(per_difCoast_Plus_EA.ToString())); 
+            t_difCoast_Plus_Bath_Percent.Text = string.Format("{0:##.##}", decimal.Parse(per_difCoast_Plus_Bath.ToString()));
+
+            t_difCoast_Dis_List_Percent.Text = string.Format("{0:##.##}", decimal.Parse(per_difCoast_Dis_List.ToString()));
+            t_difCoast_Dis_EA_Percent.Text = string.Format("{0:##.##}", decimal.Parse(per_difCoast_Dis_EA.ToString()));
+            t_difCoast_Dis_Bath_Percent.Text = string.Format("{0:##.##}", decimal.Parse(per_difCoast_Dis_Bath.ToString()));
+
+            t_total_bal_percent.Text = string.Format("{0:##.##}", decimal.Parse((((te_difCoast_Plus_Bath - te_difCoast_Dis_Bath) / te_total_count) * 100).ToString()));
+            t_total_dif_percent.Text = string.Format("{0:##.##}", decimal.Parse((((te_difCoast_Plus_Bath + te_difCoast_Dis_Bath) / te_total_count) * 100).ToString()));
+        }
+        public void setTextReport_D()
         {
 
-            countItem.Text = treePetch.T_Count_Item.ToString();
+            d_difCoast_Plus_List.Text = string.Format("{0:#,###.##}", decimal.Parse(de_difCoast_Plus_List.ToString()));
+            d_difCoast_Plus_EA.Text = string.Format("{0:#,###.##}", decimal.Parse(de_difCoast_Plus_EA.ToString()));
+            d_difCoast_Plus_Bath.Text = string.Format("{0:#,###.##}", decimal.Parse(de_difCoast_Plus_Bath.ToString()));
+
+
+            d_difCoast_Dis_List.Text = string.Format("{0:#,###.##}", decimal.Parse(de_difCoast_Dis_List.ToString()));
+            d_difCoast_Dis_EA.Text = string.Format("{0:#,###.##}", decimal.Parse(de_difCoast_Dis_EA.ToString()));
+            d_difCoast_Dis_Bath.Text = string.Format("{0:#,###.##}", decimal.Parse(de_difCoast_Dis_Bath.ToString()));
+
+            d_count_item.Text = string.Format("{0:#,###.##}", decimal.Parse(de_count_item.ToString()));
+            d_total_count.Text = string.Format("{0:#,###.##}", decimal.Parse(de_total_count.ToString()));
+            d_sum_amound.Text = string.Format("{0:#,###.##}", decimal.Parse(de_sum_amound.ToString()));
+
+            d_total_bal_bath.Text = string.Format("{0:#,###.##}", decimal.Parse((de_difCoast_Plus_Bath - de_difCoast_Dis_Bath).ToString()));
+            d_total_dif_bath.Text = string.Format("{0:#,###.##}", decimal.Parse((de_difCoast_Plus_Bath + de_difCoast_Dis_Bath).ToString()));
+
+            this.setTextReportPercent_D();
+        }
+        public void setTextReportPercent_D()
+        {
+            double per_difCoast_Plus_List = (de_difCoast_Plus_List / de_count_item) * 100;
+            double per_difCoast_Plus_EA = (de_difCoast_Plus_EA / de_sum_amound) * 100;
+            double per_difCoast_Plus_Bath = (de_difCoast_Plus_Bath / de_total_count) * 100;
+            double per_difCoast_Dis_List = (de_difCoast_Dis_List / de_count_item) * 100;
+            double per_difCoast_Dis_EA = (de_difCoast_Dis_EA / de_sum_amound) * 100;
+            double per_difCoast_Dis_Bath = (de_difCoast_Dis_Bath / de_total_count) * 100;
+
+            d_difCoast_Plus_List_Percent.Text = per_difCoast_Plus_List == 0 ? per_difCoast_Plus_List.ToString() : string.Format("{0:#.##}", decimal.Parse(per_difCoast_Plus_List.ToString()));
+            d_difCoast_Plus_EA_Percent.Text = per_difCoast_Plus_EA == 0 ? per_difCoast_Plus_EA.ToString() : string.Format("{0:#.##}", decimal.Parse(per_difCoast_Plus_EA.ToString()));
+            d_difCoast_Plus_Bath_Percent.Text = per_difCoast_Plus_Bath == 0 ? per_difCoast_Plus_Bath.ToString() : string.Format("{0:#.##}", decimal.Parse(per_difCoast_Plus_Bath.ToString()));
+
+            d_difCoast_Dis_List_Percent.Text = per_difCoast_Dis_List == 0 ? per_difCoast_Dis_List.ToString() : string.Format("{0:#.##}", decimal.Parse(per_difCoast_Dis_List.ToString()));
+            d_difCoast_Dis_EA_Percent.Text = per_difCoast_Dis_EA == 0 ? per_difCoast_Dis_EA.ToString() : string.Format("{0:#.##}", decimal.Parse(per_difCoast_Dis_EA.ToString()));
+            d_difCoast_Dis_Bath_Percent.Text = per_difCoast_Dis_Bath ==0 ? per_difCoast_Dis_Bath.ToString() : string.Format("{0:#.##}", decimal.Parse(per_difCoast_Dis_Bath.ToString()));
+
+            d_total_bal_bath_percent.Text = string.Format("{0:#.##}", decimal.Parse(((de_difCoast_Plus_Bath - de_difCoast_Dis_Bath) / de_total_count * 100).ToString()));
+            d_total_dif_bath_percent.Text = string.Format("{0:#.##}", decimal.Parse(((de_difCoast_Plus_Bath + de_difCoast_Dis_Bath) / de_total_count * 100).ToString()));
         }
     }
 }

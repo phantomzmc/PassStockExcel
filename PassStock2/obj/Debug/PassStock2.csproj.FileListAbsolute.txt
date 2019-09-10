@@ -45,8 +45,8 @@ C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Newtonsoft.Json.xml
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\System.Web.Optimization.xml
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Antlr3.Runtime.pdb
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Debug\PassStock2.csprojAssemblyReference.cache
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Debug\PassStock2.csproj.CoreCompileInputs.cache
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Debug\PassStock2.csproj.CopyComplete
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Debug\PassStock2.dll
 C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Debug\PassStock2.pdb
-C:\Users\SittikoRN\source\repos\PassStock2\PassStock2\obj\Debug\PassStock2.csprojAssemblyReference.cache

@@ -407,213 +407,239 @@
                                         <tr>
                                             <td> อะไหล่ตรีเพชรฯ (1)</td>
                                             <td>
-                                                <asp:Label ID="countItem" runat="server" Text="00000"></asp:Label>
+                                                <asp:Label ID="t_count_item" runat="server" Text="00000"></asp:Label>
                                             </td>
                                             <td>รายการ</td>
                                             <td>(+)</td>
-                                            <td>00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Plus_List" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>รายการ</td>
-                                            <td>0.00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Plus_List_Percent" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td> จำนวน</td>
-                                            <td>000000</td>
+                                            <td>
+                                                <asp:Label ID="t_total_count" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>ชิ้น</td>
                                             <td>จำนวน</td>
-                                            <td>00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Plus_EA" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>ชิ้น</td>
-                                            <td>0.00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Plus_EA_Percent" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td> มูลค่า</td>
-                                            <td>000000</td>
+                                            <td>
+                                                <asp:Label ID="t_sum_amound" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>บาท</td>
                                             <td>มูลค่า</td>
-                                            <td>00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Plus_Bath" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Plus_Bath_Percent" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>(-)</td>
-                                            <td>100</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Dis_List" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>รายการ</td>
-                                            <td>0.00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Dis_List_Percent" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>จำนวน</td>
-                                            <td>00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Dis_EA" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>ชิ้น</td>
-                                            <td>0.00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Dis_EA_Percent" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>มูลค่า</td>
-                                            <td>00</td>
+                                            <td>
+                                                <asp:Label ID="t_difCoast_Dis_Bath" runat="server" Text="00000"></asp:Label>
+                                            </td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="t_difCoast_Dis_Bath_Percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>TOTAL BAL.</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="t_total_bal_bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="t_total_bal_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>TOTAL DIF.</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="t_total_dif_bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="t_total_dif_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
-                                            <td> อะไหล่ตรีเพชรฯ (1)</td>
-                                            <td>000000</td>
+                                            <td> อะไหล่ผู้จำหน่าย (2)</td>
+                                            <td><asp:Label ID="d_count_item" runat="server" Text="00000"></asp:Label></td>
                                             <td>รายการ</td>
                                             <td>(+)</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="d_difCoast_Plus_List" runat="server" Text="00000"></asp:Label></td>
                                             <td>รายการ</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_difCoast_Plus_List_Percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td> จำนวน</td>
-                                            <td>000000</td>
+                                            <td><asp:Label ID="d_sum_amound" runat="server" Text="00000"></asp:Label></td>
                                             <td>ชิ้น</td>
                                             <td>จำนวน</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="d_difCoast_Plus_EA" runat="server" Text="00000"></asp:Label></td>
                                             <td>ชิ้น</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_difCoast_Plus_EA_Percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td> มูลค่า</td>
-                                            <td>000000</td>
+                                            <td><asp:Label ID="d_total_count" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
                                             <td>มูลค่า</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="d_difCoast_Plus_Bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_difCoast_Plus_Bath_Percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>(-)</td>
-                                            <td>100</td>
+                                            <td><asp:Label ID="d_difCoast_Dis_List" runat="server" Text="00000"></asp:Label></td>
                                             <td>รายการ</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_difCoast_Dis_List_Percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>จำนวน</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="d_difCoast_Dis_EA" runat="server" Text="00000"></asp:Label></td>
                                             <td>ชิ้น</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_difCoast_Dis_EA_Percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>มูลค่า</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="d_difCoast_Dis_Bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_difCoast_Dis_Bath_Percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>TOTAL BAL.</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="d_total_bal_bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_total_bal_bath_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>TOTAL DIF.</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="d_total_dif_bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="d_total_dif_bath_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
-                                            <td> อะไหล่ตรีเพชรฯ (1)</td>
-                                            <td>000000</td>
+                                            <td> อะไหล่ทั้งหมด</td>
+                                            <td><asp:Label ID="a_listitem" runat="server" Text="00000"></asp:Label></td>
                                             <td>รายการ</td>
                                             <td>(+)</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="a_listitem_plus" runat="server" Text="00000"></asp:Label></td>
                                             <td>รายการ</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_listitem_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td> จำนวน</td>
-                                            <td>000000</td>
+                                            <td><asp:Label ID="a_count" runat="server" Text="00000"></asp:Label></td>
                                             <td>ชิ้น</td>
                                             <td>จำนวน</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="a_count_ea" runat="server" Text="00000"></asp:Label></td>
                                             <td>ชิ้น</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_count_ea_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td> มูลค่า</td>
-                                            <td>000000</td>
+                                            <td><asp:Label ID="a_value" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
                                             <td>มูลค่า</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="a_value_bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_value_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>(-)</td>
-                                            <td>100</td>
+                                            <td><asp:Label ID="a_list_dis" runat="server" Text="00000"></asp:Label></td>
                                             <td>รายการ</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_list_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>จำนวน</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="a_counts_ea" runat="server" Text="00000"></asp:Label></td>
                                             <td>ชิ้น</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_counts_ea_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>มูลค่า</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="a_values_bath" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_values_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>TOTAL BAL.</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="a_total_bal" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_total_bal_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"></td>
                                             <td>TOTAL DIF.</td>
-                                            <td>00</td>
+                                            <td><asp:Label ID="a_total_dif" runat="server" Text="00000"></asp:Label></td>
                                             <td>บาท</td>
-                                            <td>0.00</td>
+                                            <td><asp:Label ID="a_total_dif_percent" runat="server" Text="00000"></asp:Label></td>
                                             <td>%</td>
                                         </tr>
                                     </table>
